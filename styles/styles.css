@@ -201,13 +201,17 @@ body {
 }
 
 .clients-item {
-  fill: #afb1b8;
+  /* fill: #afb1b8; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .clients a {
+  transition-property: border-color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+
   display: flex;
   width: 170px;
   height: 90px;
@@ -216,12 +220,13 @@ body {
   border-radius: 4px;
   justify-content: center;
   align-items: center;
+  fill: #afb1b8;
 }
 
 .clients-item a:hover,
 .clients-item a:focus {
   border-color: var(--accent-color);
-  --color1: var(--accent-color);
+  fill: var(--accent-color);
   --color2: var(--accent-color);
   border-width: 2px;
 }
@@ -313,6 +318,10 @@ body {
   padding-top: 32px;
   padding-bottom: 32px;
 
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+
   font-style: normal;
   color: var(--title-text-color);
   font-size: 14px;
@@ -369,6 +378,12 @@ body {
   line-height: 1.14;
   text-decoration: none;
 } */
+
+.social .link {
+  transition-property: fill, color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+}
 
 .social .link:hover,
 .social .link:focus {
@@ -445,6 +460,9 @@ footer,
 }
 
 .address-nav .link {
+  transition-property: fill, color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
   font-style: normal;
   color: var(--title-text-color);
   font-size: 14px;
@@ -468,6 +486,10 @@ footer,
 }
 
 .address .link {
+  transition-property: fill, color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+
   padding-top: 9px;
   padding-bottom: 9px;
   font-family: inherit;
@@ -492,20 +514,86 @@ footer,
 .works-list {
   display: flex;
   flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
   margin: -15px;
 }
 
-/* .works-list .item + .item {
-  margin-left: 30px;
-} */
+.project-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.text-hover {
+  display: flex;
+  width: 322px;
+  height: 168px;
+  color: var(--white-color);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 250ms var(--timing-function);
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--primary-white-color);
+  background: rgba(33, 150, 243, 0.9);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 250ms var(--timing-function),
+    opacity 250ms var(--timing-function);
+}
 
 .works-list .item {
-  position: relative;
   margin: 15px;
   width: calc ((100% - 60px)/3);
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
 }
+
+.works-list > .item:hover {
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    0px 1px 1px rgba(0, 0, 0, 0.12);
+}
+
+.works-list > .item:hover .text-hover {
+  opacity: 1;
+}
+
+.works-list > .item:hover .card-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.works-list > img {
+  display: block;
+}
+
+.profile {
+  margin-left: 24px;
+}
+
+/* .works-list .item + .item {
+  margin-left: 30px;
+} */
 
 .works-list .item:nth-child(3n) {
   margin-right: 0px;
@@ -552,6 +640,10 @@ footer,
 }
 
 .works-button {
+  transition-property: fill, color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+
   border-radius: 4px;
   border-color: #f5f4fa;
   padding: 6px 22px;
@@ -579,24 +671,6 @@ button {
 button:hover,
 button:focus {
   color: var(--accent-color);
-}
-
-.text-hover {
-  display: none;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  margin-top: 0;
-  margin-bottom: 0;
-
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1.56;
-  color: var(--primary-white-color);
-  background: rgba(33, 150, 243, 0.9);
 }
 
 .section-title {
@@ -725,6 +799,10 @@ button:focus {
 }
 
 .social-link {
+  transition-property: fill, color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+
   fill: #afb1b8;
   display: inline-flex;
   align-items: center;
