@@ -511,6 +511,10 @@ footer,
   padding-bottom: 94px;
 }
 
+.works .title {
+  text-align: left;
+}
+
 .works-list {
   display: flex;
   flex-wrap: wrap;
@@ -569,16 +573,16 @@ footer,
     0px 1px 1px rgba(0, 0, 0, 0.12);
 }
 
-.works-list > .item:hover {
+.works-list .link:hover {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
 }
 
-.works-list > .item:hover .text-hover {
+.works-list .link:hover .text-hover {
   opacity: 1;
 }
 
-.works-list > .item:hover .card-overlay {
+.works-list .link:hover .card-overlay {
   transform: translateY(0);
   opacity: 1;
 }
@@ -615,6 +619,7 @@ footer,
 }
 
 .works-description {
+  text-align: left;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.8;
