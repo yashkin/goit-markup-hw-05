@@ -156,8 +156,6 @@ body {
   background-color: #f5f4fa;
 }
 
-p {margin: 0;}
-
 .team .container {
   background-color: #f5f4fa;
 }
@@ -585,7 +583,7 @@ footer,
 }
 
 .works-list .link:hover .card-overlay {
-  transform: translateY(0) translateX(0);
+  transform: translateY(0);
   opacity: 1;
 }
 
@@ -593,10 +591,8 @@ footer,
   display: block;
 }
 
-
 .profile {
   margin-left: 24px;
-  margin-bottom: 0px;
 }
 
 /* .works-list .item + .item {
@@ -614,7 +610,7 @@ footer,
 .works-list .link {
   text-decoration: none;
   text-align: center;
-  /* display: block; */
+  display: block;
 }
 
 .works-list.link:hover,
@@ -667,15 +663,15 @@ footer,
 .works-button:hover {
   background-color: var(--accent-color);
   color: var(--primary-white-color);
-  
+}
 
 /* .list-workbuton .item {
   margin-left: 8px;
 } */
 
-/* .button {
+button {
   font-family: inherit;
-} */
+}
 
 button:hover,
 button:focus {
